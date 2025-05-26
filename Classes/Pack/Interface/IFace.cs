@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace DatabaseManagementStudio.Classes.Pack.Interface
 {
-    internal class IFace
+    public class IFace
     {
+        public IStyle iStyle = new IStyle();
+        public ILanguage iLanguage = new ILanguage();
         public IFace() { 
-            IFace iFace = new IFace();
-            ILanguage iLanguage = new ILanguage();
+        }
+        public void Init()
+        {
+
         }
     }
 }

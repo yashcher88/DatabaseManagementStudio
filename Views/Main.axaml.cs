@@ -11,7 +11,7 @@ namespace DatabaseManagementStudio;
 
 public partial class Main : Window
 {
-    Loading L = new Loading();
+    public Loading L;
     public Main()
     {
         InitializeComponent();

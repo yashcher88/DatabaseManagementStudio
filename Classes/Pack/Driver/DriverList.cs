@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace DatabaseManagementStudio.Classes.Pack.Driver
 {
-    internal class DriverList
+    public class DriverList
     {
+        public DriverList() { 
+        
+        }
+        public void Init()
+        {
+
+        }
     }
 }

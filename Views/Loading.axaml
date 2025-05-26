@@ -6,25 +6,35 @@
         mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="250"
 		Width="400" Height="250"
         x:Class="DatabaseManagementStudio.Views.Loading"
-        x:DataType="vm:LoadingViewModel"
         Title="DatabaseManagementStudio"
 		WindowStartupLocation="CenterScreen"
 		SystemDecorations="None"
 		CanResize="False"
+		Opened="AfterShow"
 		>
 	<Window.Background>
 		<ImageBrush Source="/Assets/main_image.png" Stretch="UniformToFill"/>
 	</Window.Background>
 	
 	<Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<vm:LoadingViewModel/>
     </Design.DataContext>
 	<Grid>
-	    <TextBlock Text="Database Management Studio" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="17" Foreground="White" FontFamily="Arial" FontSize="20" FontWeight="Black"/>
-	
-        <TextBlock Text="{Binding LoadingCaption}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="10" Foreground="White"/>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="22"/>
+			<RowDefinition Height="22"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"/>
+			<ColumnDefinition Width="200"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Database Management Studio" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="17" Foreground="White" FontFamily="Arial" FontSize="20" FontWeight="Black"/>
+
+		<TextBlock x:Name="StateText" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Loading..." HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="10,0,10,0" Foreground="White"/>
+		<TextBlock x:Name="BuildBlock" Grid.Row="3" Grid.Column="0" Text="Build v." HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="10,0,10,5" FontSize="8" Foreground="White"/>
+		<TextBlock x:Name="PackageBlock" Grid.Row="3" Grid.Column="1" Text="Package..." HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="10,0,10,5" FontSize="8" Foreground="White"/>
 	</Grid>
 
 </Window>

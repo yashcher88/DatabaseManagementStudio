@@ -13,6 +13,7 @@
     <Folder Include="Classes\Server\" />
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <Folder Include="Views\Common\" />
   </ItemGroup>
 
   <ItemGroup>

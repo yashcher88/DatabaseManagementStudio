@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseManagementStudio.Classes.Pack.Interface
 {
-    internal class IStyle
+    public class IStyle
     {
         public IStyle()
         {

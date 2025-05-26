@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseManagementStudio.Classes.Pack.Interface
 {
-    internal class ILanguage
+    public class ILanguage
     {
 
     }

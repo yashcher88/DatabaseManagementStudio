@@ -1,33 +1,42 @@
 using Avalonia.Controls;
 using Avalonia.Threading;
+using DatabaseManagementStudio.Classes.Pack;
 using System;
+using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace DatabaseManagementStudio.Views
 {
     public partial class Loading : Window
     {
-        private DispatcherTimer _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
+        public Pack pack;
+        public Main mainWindow;
         public Loading()
         {
             InitializeComponent();
-            SetupTimer();
         }
-        private void SetupTimer()
-        {
-            _timer.Tick += Timer_Tick;
-            _timer.Start();
+        public void AfterShow(object? sender, EventArgs e) {
+            Init();
         }
-        private void Timer_Tick(object? sender, EventArgs e)
-        {
-            _timer.Stop(); // Остановить таймер
+        public async void Init() {
+            pack = new Pack();
+            StateText.Text = $"Loading";
+            await Task.Delay(1000);
+            pack.appSets.Init();
+            StateText.Text = $"Apply settings";
+            await Task.Delay(1000);
+            pack.iFace.Init();
+            StateText.Text = $"Apply interface settings";
+            await Task.Delay(1000);
+            pack.driverList.Init();
+            StateText.Text = $"Load drivers";
+            await Task.Delay(1000);
 
-            // Создать и показать новое окно
-            var newWindow = new Main();
-            newWindow.Init(this);
-            newWindow.Show();
+            mainWindow = new Main();
+            mainWindow.Init(this);
+            mainWindow.Show();
 
-            // Спрятать текущее окно
-            this.Hide();
+            Hide();
         }
     }
 }

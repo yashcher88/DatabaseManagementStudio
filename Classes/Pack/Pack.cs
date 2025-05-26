@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 
 namespace DatabaseManagementStudio.Classes.Pack
 {
-    internal class Pack
+    public class Pack
     {
-        public IFace iFace = new IFace();
-        public DriverList driverList = new DriverList();
-        public Pack() { 
-            
+        public AppSets appSets;
+        public IFace iFace;
+        public DriverList driverList;
+        public Pack() {
+            appSets = new AppSets();
+            iFace = new IFace();
+            driverList = new DriverList();
         }
     }
 }
