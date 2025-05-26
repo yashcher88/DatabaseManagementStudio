@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DatabaseManagementStudio.Main"
+        Title="Database Management Studio">
+	<DockPanel>
+	    <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Файл">
+                <MenuItem Header="_Новый"/>
+                <MenuItem Header="_Открыть..."/>
+                <MenuItem Header="_Сохранить"/>
+                <Separator/>
+                <MenuItem Header="_Выход"/>
+            </MenuItem>
+
+            <MenuItem Header="_Правка">
+                <MenuItem Header="_Вырезать"/>
+                <MenuItem Header="_Копировать"/>
+                <MenuItem Header="_Вставить"/>
+            </MenuItem>
+
+			<MenuItem Header="Параметры">
+				<MenuItem Header="Конфигурация" Click="Config"/>
+			</MenuItem>
+
+            <MenuItem Header="_Справка">
+                <MenuItem Header="_О программе"/>
+            </MenuItem>
+        </Menu>
+		<Border DockPanel.Dock="Bottom"
+                Background="#F0F0F0"
+                BorderThickness="0,1,0,0"
+                BorderBrush="Gray">
+			<Grid Height="24">
+				<TextBlock Text="Готово" VerticalAlignment="Center" Margin="5,0"/>
+				<ProgressBar Width="100"
+                             Height="16"
+                             HorizontalAlignment="Right"
+                             Margin="5"
+                             IsIndeterminate="True"/>
+			</Grid>
+		</Border>
+		<TextBox/>
+	</DockPanel>
+</Window>
