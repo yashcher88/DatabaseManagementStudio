@@ -9,9 +9,9 @@ using System.ComponentModel;
 
 namespace DatabaseManagementStudio;
 
-public partial class Main : Window
+public partial class Main : BaseForm
 {
-    public Loading L;
+    public Loading? L;
     public Main()
     {
         InitializeComponent();
@@ -22,7 +22,10 @@ public partial class Main : Window
         L = W;
     }
     public void Window_Closed(object? sender, CancelEventArgs e) {
-        L.Close();
+        if (L != null)
+        {
+            L.Close();
+        }
     }
 
     public void Config(object? sender, RoutedEventArgs e) { 

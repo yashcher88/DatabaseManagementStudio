@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace DatabaseManagementStudio.Classes
 {
-    public class AppSets
+    public class InterfaceLanguage
     {
-        string AppPath;
-        public AppSets() {
-            AppPath = AppContext.BaseDirectory;
+        public void Load(JsonNode? J) { 
+            
         }
-
-        public void Init() { 
-        
+        public string Build() {
+            return "{}";
         }
     }
 }
